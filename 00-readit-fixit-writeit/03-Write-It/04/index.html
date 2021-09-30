@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<title>Latest 10</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <h1>Latest 10 Academy Award Best Actor winners</h1>
+<script>
+  fetch("./bestactorwinners")
+  .then(res => res.text())
+  .then(data => run(data))
+
+  const run = data => {
+  const bestactorwinners = eval(data);
+  const list = document.querySelector(".list");
+
+
+  const lastnames = bestactorwinners.map(actor => {
+	  const name = actor.actor;
+	  return name.split(" ")[1];
+  });
+
+
+ 
+</script>
+</body>
+</html>

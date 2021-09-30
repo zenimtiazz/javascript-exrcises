@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<title>Latest 10</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <h1>Latest 10 Academy Award Best Actor winners by age</h1>
+  <script>
+
+	fetch("./bestactorwinners")
+	.then(res => res.text()) 
+	.then(data => run(data))
+            
+	const run = data => {
+	const bestactorwinners = eval(data); //evaluate the expression
+
+	bestactorwinners.sort((a,b) =>  b.age - a.age )
+	bestactorwinners.map( actor =>                         //creates a new array
+		document.write(`<li>${actor.age}</li>`));
+
+
+	const sum = bestactorwinners.reduce((accumulator, currentValue) => {  //reduce the array into single value
+  	  accumulator + currentValue;  
+}, 0);
+	
+console.log(z);
+	
+	};
+  </script>
+</body>
+</html>

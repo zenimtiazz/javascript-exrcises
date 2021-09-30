@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EX 02</title>
+</head>
+<body>
+    <script>
+
+        const movies = ["HORS NORMES", "THE MUSTANG", "JOKER", "DOWNTON ABBEY", "PARASITE", "LA RAGAZZA NELLA NEBBIA", "ONCE UPON A TIME… IN HOLLYWOOD", "AU NOM DE LA TERRE", "ITZHAK", "EVEREST: DE JONGE YETI", "MINUSCULE 2: HET TROPISCH AVONTUUR", "DE LEEUWENKONING"];
+        
+        const wrapInTag = (content, tagname = "li") => 
+             `<${tagname}>${content}</${tagname}>`
+      
+
+        document.write("<ul>");
+
+        const d = movies
+        .reverse()
+        .map(movie => movie.toLowerCase())
+        .map(movie => wrapInTag(movie))
+        .join('');
+
+        document.write(d);
+
+        document.close();
+
+
+    </script>
+</body>
+</html>
