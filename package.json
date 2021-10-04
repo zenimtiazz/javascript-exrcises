@@ -1,0 +1,27 @@
+{
+  "name": "javascript-exrcises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "json-server": "^0.16.1"
+  },
+  "devDependencies": {
+    "seve": "^0.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx seve -e '*.json,*.md,node_modules,_shared' -p 8000 -i .",
+    "api": "npx json-server ./_shared/api.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenimtiazz/javascript-exrcises.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zenimtiazz/javascript-exrcises/issues"
+  },
+  "homepage": "https://github.com/zenimtiazz/javascript-exrcises#readme"
+}

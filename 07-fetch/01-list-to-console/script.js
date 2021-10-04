@@ -10,10 +10,11 @@
 // You will have time to focus on it later.
 
 (() => {
-    const getItems = async (url)=>{
+    const getItems = async function (url)
+    {
         const response = await fetch(url);
-        const json = await response.json();
-        console.log(json.heroes[0]);
+        const json =  await response.json();
+        console.log(json);
     }
 
     document.getElementById("run").addEventListener("click", ()=> {
@@ -21,3 +22,4 @@
     });
 
 })();
+

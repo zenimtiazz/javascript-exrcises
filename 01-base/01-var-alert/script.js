@@ -11,6 +11,7 @@
 
 (function() {
 
-    alert("hello world")
+    var s= "Hello world!" ;
+    alert(s)
 
 })();

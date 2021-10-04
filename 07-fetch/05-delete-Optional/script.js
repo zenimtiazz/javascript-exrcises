@@ -10,5 +10,23 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById('run').addEventListener('click', function() {
+
+        fetch('../../_shared/api.json')
+            .then(response => response.json())
+            .then(data =>  {
+                let heroes = data.heroes;
+                let heroId = document.getElementById('hero-id').value
+                if (heroId <= heroes.length && heroId > 0) {
+                    
+                    heroes.splice((heroId - 1), 1);
+                    console.log(heroes);
+                  
+                } 
+                else {
+                    alert("Enter an ID number between 1 and 5");
+                }
+            })
+    })
+
 })();

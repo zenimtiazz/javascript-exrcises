@@ -9,7 +9,22 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-document.getElementById('run').addEventListener('click', function () {
-    document.body.style.backgroundColor =
-      '#' + ((Math.random() * 0xffffff) << 0).toString(16).padStart(6, '0');
-  });
+(function() {
+
+  const generateRGB = () => {
+      const num = Math.round(0xffffff * Math.random());
+      const r = num >> 16;
+      const g = num >> 8 & 255;
+      const b = num & 255;
+      return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
+     
+  
+  
+  document.getElementById("run").addEventListener("click", () => {
+    document.body.style.backgroundColor = generateRGB();
+  })
+  
+  
+  
+  })();

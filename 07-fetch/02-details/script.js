@@ -12,26 +12,28 @@
 (() => {
     const getHeroes = async ()=>{
         const response = await fetch('../../_shared/api.json');
-        return await response.json();
+        return response.json();
     }
 
-    const displayHeroesFromTemplate = async (templateID, targetID) =>{
+    const getHeroeByID = async (heroeID) => {
+        const heroes = await getHeroes();
+        const match = Object.values(heroes)[0].filter((heroe) => heroe.id == heroeID );
+        return match
+    }
+
+    const displayHeroeFromTemplateByID = async (heroeID, templateID, targetID) =>{
         const target = document.getElementById(targetID);
         const template = document.getElementById(templateID);
-        const heroes = await getHeroes();
-        for (heroe of heroes.heroes){
-           let newNode =  template.content.cloneNode(true);
-           newNode.querySelector('.name').innerText=heroe.name;
-           newNode.querySelector('.alter-ego').innerText=heroe.alterEgo;
-           newNode.querySelector('.powers').innerText=heroe.abilities.join(", ");
-            target.appendChild(newNode);
-        }
+        const heroe = await getHeroeByID(heroeID);
+
+        let newNode =  template.content.cloneNode(true);
+        newNode.querySelector('.title').innerText=heroe[0].name;
+        newNode.querySelector('.powers').innerText=heroe[0].abilities.join(", ");
+        target.appendChild(newNode);
     }
 
-    document.getElementById("run").addEventListener("click", ()=> {
-        displayHeroesFromTemplate("tpl-hero", "target");
+    document.getElementById("run").addEventListener("click", ()=>{
+        const value = document.getElementById("hero-id").value;
+        displayHeroeFromTemplateByID(value, "tpl-hero", "target");
     });
-
-
 })();
-

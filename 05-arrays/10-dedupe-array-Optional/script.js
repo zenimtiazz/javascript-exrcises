@@ -30,10 +30,10 @@
     document.getElementById("run").addEventListener("click", () => {
         
 
-        const duplicate = (list, current) => list.includes(current) ? list : [... list, current];
+        const duplicate = (list, current) => list.includes(current) ? list : [list, current];
         const uniqueListReduce = fruits.reduce(duplicate, []);
 
-        const uniqueListSet = [...new Set(fruits)]; // https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array
+        const uniqueListSet = [new Set(fruits)]; 
         
         console.log(uniqueListSet);
         console.log(uniqueListReduce);

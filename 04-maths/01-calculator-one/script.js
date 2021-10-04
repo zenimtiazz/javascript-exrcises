@@ -13,29 +13,30 @@
     // to get the value of an input: document.getElementById("element-id").value
 
 
-    const setNumbers = () => {
-        opOne = parseInt(document.getElementById("op-one").value);
-        opTwo = parseInt(document.getElementById("op-two").value);
+    const setNumbers = () => 
+    {
+       a = parseFloat(document.getElementById("op-one").value); // string to convert into numbers
+        b = parseFloat(document.getElementById("op-two").value);
     }
-
     
     document.getElementById("addition").addEventListener("click", function() {
-        setNumbers();
-        alert(opOne + opTwo);
-    });
+         setNumbers();
+        alert(a + b);
+        });
 
     document.getElementById("substraction").addEventListener("click", function() {
         setNumbers();
-        alert(opOne - opTwo);
+        alert(a - b);
     });
 
     document.getElementById("multiplication").addEventListener("click", function() {
         setNumbers();
-        alert(opOne * opTwo);
+        alert(a * b);
     });
 
     document.getElementById("division").addEventListener("click", function() {
         setNumbers();
-        alert(opOne / opTwo);
+        alert(a / b);
     });
+  
 })();

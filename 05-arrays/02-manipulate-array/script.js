@@ -29,8 +29,8 @@ document.getElementById("run").addEventListener("click", () => {
     fruits.shift(); // remove first element
     fruits.pop();// remove last element
 
-    fruits.unshift("banana");
-    fruits.push("kiwi");
+    fruits.unshift("banana"); //add first element
+    fruits.push("kiwi"); //add last element
    alert(fruits);
 
 

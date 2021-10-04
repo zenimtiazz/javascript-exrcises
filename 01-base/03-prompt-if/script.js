@@ -11,7 +11,7 @@
 
 (function() {
   const wantCake = prompt("Would you like some cake ? (yes/no)");
-  if(wantCake.toLowerCase() == "yes")
+  if(wantCake === "yes")
   alert("Congrats!");
   else
   alert("More cake for me then");

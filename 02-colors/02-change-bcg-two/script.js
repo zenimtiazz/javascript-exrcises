@@ -9,7 +9,17 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-function changeColor() { 
-  let color = document.getElementById('color').value;
-  document.body.style.backgroundColor = color;
-}
+
+(function() {
+
+  let t = document.getElementById("run");
+  t= document.addEventListener ("click", ()=>
+    document.body.style.backgroundColor= document.getElementById("color").value
+
+ );
+
+
+
+
+
+})();

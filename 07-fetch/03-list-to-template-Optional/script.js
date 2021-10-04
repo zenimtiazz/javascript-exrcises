@@ -19,11 +19,11 @@
         const target = document.getElementById(targetID);
         const template = document.getElementById(templateID);
         const heroes = await getHeroes();
-        for (heroe of heroes.heroes){
+        for (h of heroes.heroes){
            let newNode =  template.content.cloneNode(true);
-           newNode.querySelector('.name').innerText=heroe.name;
-           newNode.querySelector('.alter-ego').innerText=heroe.alterEgo;
-           newNode.querySelector('.powers').innerText=heroe.abilities.join(", ");
+           newNode.querySelector('.name').innerText=h.name;
+           newNode.querySelector('.alter-ego').innerText=h.alterEgo;
+           newNode.querySelector('.powers').innerText=h.abilities.join(", ");
             target.appendChild(newNode);
         }
     }

@@ -9,6 +9,6 @@ document.getElementById("run").addEventListener("click", function() { // button 
               num *= i;
         }
         
-    document.getElementById("res").innerHTML=num;
+   console.log(num);
          } )
         })();

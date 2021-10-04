@@ -30,8 +30,8 @@
         
       document.getElementById("run").addEventListener("click", () => {
     
-        for(fruitCount = 0; fruitCount < fruits.length; fruitCount++){
-          console.log(fruits[fruitCount]);
+        for(i = 0; i < fruits.length; i++){
+          console.log(fruits[i]);
         }
     
     

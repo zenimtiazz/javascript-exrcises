@@ -11,18 +11,19 @@
 
 (function() {
 
+  
 
     document.getElementById("run").addEventListener("click", function() {
 
-        const numberField = document.getElementById("numbers");
+        const number = document.getElementById("numbers");
 
-        const sortedInput = numberField.value
+        const sorted = number.value
         .split(', ')
         .sort((a,b) => a -b );
 
-        const newString = sortedInput.join(", ");
+        const newString = sorted.join(", ");
 
-        numberField.value=newString;
+        number.value=newString;
 
     });
 

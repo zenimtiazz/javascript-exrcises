@@ -33,10 +33,10 @@ const extras = [
   }
 ];
 document.write("<ul>");
-for (fe of fees){
-  document.write(`<li>${fe.title} €${fe.price}</li>`)
-  for(extr of extras){
-    document.write(`<li>${fe.title} + ${extr.title} = (${fe.price} + ${extr.price} => €${fe.price + extr.price}</li>`)
+for (const fee of fees){
+  document.write(`<li>${fee.title} €${fee.price}</li>`)
+  for(const extra of extras){
+    document.write(`<li>${fee.title} + ${extra.title} = (${fee.price} + ${extra.price} => €${fee.price + extra.price}</li>`)
   }
 }
 document.write("</ul>");

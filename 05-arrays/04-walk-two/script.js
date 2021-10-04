@@ -27,7 +27,7 @@
     ];
     document.getElementById("run").addEventListener("click", () => {
 
-        fruits.forEach((fruit) => console.log(fruit));
+        fruits.forEach((i) => console.log(i));
     
       });
 })();

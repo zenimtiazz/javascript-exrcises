@@ -8,6 +8,13 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
-function changeColor(color) { 
-    document.body.style.background = color; 
-}
+
+(function() {
+
+    document.addEventListener("click", (event) => {
+        document.body.style.backgroundColor = event.target.id;
+    })
+
+
+
+})();

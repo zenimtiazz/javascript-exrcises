@@ -22,13 +22,17 @@
 		document.write(`<li>${actor.age}</li>`));
 
 
-	const sum = bestactorwinners.reduce((accumulator, currentValue) => {  //reduce the array into single value
-  	  accumulator + currentValue;  
-}, 0);
-	
-console.log(z);
-	
-	};
+	const sum = bestactorwinners.reduce(function(sum, actor) {
+		if(typeof (sum)=== 'number'){
+			return sum + actor.age;
+		}
+     
+	else{
+		return sum.age + actor.age;
+	}
+});
+console.log(sum);
+	}
   </script>
 </body>
 </html>

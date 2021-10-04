@@ -91,10 +91,10 @@
 
     document.getElementById("run").addEventListener("click", () => {
 
-        const reducer = (ages, current) => {
+        const total = (ages, current) => {
             return ages + current.age;
         }
-        const ages = people.reduce(reducer, 0);
+        const ages = people.reduce(total, 0);
         console.log(ages);
 
     });
