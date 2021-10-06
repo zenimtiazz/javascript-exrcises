@@ -10,5 +10,19 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", ()=>{
+
+        const getPosts = async () => {
+           return await window.lib.getPosts();
+        }
+
+        const displayPosts = (p) =>{
+            p.then((resp)=> console.log(resp));
+        }
+
+      displayPosts(getPosts());
+
+
+
+    });
 })();

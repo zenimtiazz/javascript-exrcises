@@ -10,5 +10,20 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    const getPosts = (err, articles) => {
+        articleItem = articles.map((article)=>{
+           const articleID = article.id;
+         window.lib.getComments(articleID, addComments);
+         return articleID;
+       });
+   }
+   
+   const addComments = (err, comment) =>{
+       articleItem.comments = comment;
+       console.log(articleItem);
+   }
+   
+   document.getElementById("run").addEventListener("click", ()=>{
+       window.lib.getPosts(getPosts);
+   });
 })();

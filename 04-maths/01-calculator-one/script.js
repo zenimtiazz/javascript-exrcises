@@ -19,22 +19,22 @@
         b = parseFloat(document.getElementById("op-two").value);
     }
     
-    document.getElementById("addition").addEventListener("click", function() {
+    document.getElementById("addition").addEventListener("click", () =>{
          setNumbers();
         alert(a + b);
         });
 
-    document.getElementById("substraction").addEventListener("click", function() {
+    document.getElementById("substraction").addEventListener("click", ()=> {
         setNumbers();
         alert(a - b);
     });
 
-    document.getElementById("multiplication").addEventListener("click", function() {
+    document.getElementById("multiplication").addEventListener("click", ()=> {
         setNumbers();
         alert(a * b);
     });
 
-    document.getElementById("division").addEventListener("click", function() {
+    document.getElementById("division").addEventListener("click", () =>{
         setNumbers();
         alert(a / b);
     });

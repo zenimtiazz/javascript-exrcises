@@ -10,5 +10,23 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", ()=>{
+
+
+        const tryGetPerson = async () => {
+           let persons;
+           try{
+            persons = await window.lib.getPersons();
+           }
+           catch(msg){
+            console.error("Custom message. Following error returned: " + msg);
+           }
+           if(persons) console.log(persons);
+        }
+        
+        tryGetPerson();
+        
+        
+        
+        })
 })();

@@ -10,7 +10,20 @@
 // You will have time to focus on it later.
 
 (() => {
-    const keys = ["name", "species", "age", "gender", "color"];
-    const values = ["Skitty", "cat", 9, "female", "tabby"];
-    // your code here
+
+    document.getElementById("run").addEventListener("click", ()=>{
+        
+    const keys = ["name", "species", "age", "gender", "color"]
+    const values = ["Skitty", "cat", 9, "female", "tabby"]
+    let arr=[]
+    keys.map((keys,index)=>{
+        arr.push([keys,values[index]])
+    })
+    console.log(arr);
+    const obj = Object.fromEntries(arr);
+
+    console.log(obj);
+    })
 })();
+   
+

@@ -19,7 +19,7 @@
         const target = document.getElementById(targetID);
         const template = document.getElementById(templateID);
         const heroes = await getHeroes();
-        for (h of heroes.heroes){
+        for (h of heroes){
            let newNode =  template.content.cloneNode(true);
            newNode.querySelector('.name').innerText=h.name;
            newNode.querySelector('.alter-ego').innerText=h.alterEgo;

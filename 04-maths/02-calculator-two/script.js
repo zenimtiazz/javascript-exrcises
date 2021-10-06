@@ -18,7 +18,7 @@ function test() {
 
   
 
-    document.querySelector(".actions").addEventListener("click", (event)=>{
+    document.querySelector("actions").addEventListener("click", (event)=>{
         doOperation(event.target.id);
     });
 

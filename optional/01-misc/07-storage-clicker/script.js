@@ -10,7 +10,23 @@
 // You will have time to focus on it later.
 
 (function() {
-
-    // your code here
+    
+    const target = document.getElementById("target");
+    const getNumber = () => localStorage.getItem("number");
+    
+    
+    if ( getNumber() === null || getNumber() === "NaN"){
+       localStorage.setItem("number" ,0);
+    }
+    else{
+    target.innerHTML = getNumber();
+    };
+    
+    document.getElementById("increment").addEventListener("click", ()=>{
+      let newNum = parseInt(getNumber()) +1;
+       localStorage.setItem("number" ,newNum);
+      target.innerHTML = getNumber();
+    })
+    
 
 })();

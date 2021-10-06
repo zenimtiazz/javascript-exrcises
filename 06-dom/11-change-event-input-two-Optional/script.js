@@ -11,8 +11,6 @@
 
 (function() {
 
-    let validLength = false;
-    let validChars = false;
     const validIndicator =  document.querySelector("#validity.indicator");
     document.getElementById("pass-one").addEventListener("input", function(){
         validLength = (this.value.length >= 8) || false;

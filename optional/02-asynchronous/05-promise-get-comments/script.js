@@ -10,5 +10,31 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", ()=>{
+
+        const getPosts = window.lib.getPosts();
+        const getComments = (id) => window.lib.getComments(id);    
+    
+        const displayPostItem = postItem =>{
+            console.log(postItem);
+        }
+    
+        getPosts
+        .then(articles=>{
+             return  articles.map(article=>{
+                return {article, "comments":getComments(article.id)};
+            });
+        })
+        .then(resp=>{
+            resp.forEach(article => {
+                const post = article.article;
+                article.comments.then(comments=>{
+                    const output = {post,comments};
+                    displayPostItem(output);
+                })
+            });
+        });
+    
+        });
+    
 })();

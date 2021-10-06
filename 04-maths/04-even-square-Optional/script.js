@@ -11,7 +11,7 @@
 
 (function() {
 
-    document.getElementById("run").addEventListener("click", function() {
+    document.getElementById("run").addEventListener("click", () =>{
         const results = [];
         for(number = 1; number <= 21; number++){
             results.push(Math.pow(number, 2));

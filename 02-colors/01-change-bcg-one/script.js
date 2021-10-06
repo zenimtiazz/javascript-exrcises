@@ -11,9 +11,9 @@
 
 (function() {
 
-    document.addEventListener("click", (event) => {
-        document.body.style.backgroundColor = event.target.id;
-    })
+    document.addEventListener("click", (event) => 
+        document.body.style.backgroundColor = event.target.id
+    )
 
 
 

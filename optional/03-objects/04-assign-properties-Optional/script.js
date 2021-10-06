@@ -10,6 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
+    document.getElementById("run").addEventListener("click", ()=>{
     const computers = [
         {id: "0001", available: false, user: "leny", os: "macOS"},
         {id: "0002", available: false, user: "Nicolas"},
@@ -26,5 +27,45 @@
         os: "linux",
         user: null,
     };
-    // your code here
+
+    const props = ["available","os","user"]
+    for (let i=0 ; i<props.length ;i++)
+    {
+        computers.forEach(computer => {
+            if (!computer.hasOwnProperty(props[i])){
+                computer[props[i]] = defaultProps[props[i]];
+              }  
+              
+            
+        });
+    }
+    console.log(computers);
+
+});
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

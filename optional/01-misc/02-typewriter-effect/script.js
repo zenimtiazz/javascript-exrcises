@@ -11,35 +11,19 @@
 
 (function() {
 
-  
-        const targetElement = document.getElementById("target");
-        const textString = targetElement.innerHTML;
-        const textLetters = targetElement.innerHTML.split("");
+  var i = 0;
+  let txt = "Hello! My name is zain and I love to design and develop.";
+  var speed = 70;
+  document.getElementById("target").innerHTML;
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("target").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
         
-        
-        targetElement.innerText="";
-        
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
-          }
-        
-        
-          let finished = false;
-          let index = 0;
-          function typer() {
-            
-            let speedVariation = getRandomInt(5, 120);
-            targetElement.innerHTML= targetElement.innerHTML + textLetters[index];
-        
-            finished = (index +1 == textLetters.length) ? true :false;
-        
-            if(!finished){
-            index++;
-            setTimeout(typer,speedVariation);
-            }
-        }
-        
-        typer();
+  typeWriter();
         
         })();
 

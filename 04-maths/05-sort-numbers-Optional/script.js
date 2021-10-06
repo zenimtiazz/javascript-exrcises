@@ -13,7 +13,7 @@
 
   
 
-    document.getElementById("run").addEventListener("click", function() {
+    document.getElementById("run").addEventListener("click", ()=> {
 
         const number = document.getElementById("numbers");
 

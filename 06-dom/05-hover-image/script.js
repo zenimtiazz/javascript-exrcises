@@ -14,8 +14,8 @@
     const targetImage = document.querySelector("figure img")// variable defined with constant cannot be reassigned or reedclared
     const hoverSrc =targetImage.getAttribute("data-hover");
 
-targetImage.addEventListener("mouseover", function(){
-    this.src=hoverSrc; //refer to object it belong
-});
+targetImage.addEventListener("mouseover", ()=>
+    this.src=hoverSrc  //refer to object it belong
+);
 
 })();

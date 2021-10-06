@@ -10,5 +10,14 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+ 
+const callback = (err, person)=>{
+    if(err) console.error(err);
+    if(!err) console.table(person);
+    }
+    
+    document.getElementById("run").addEventListener("click", ()=>{
+    window.lib.getPersons(callback);
+    });
+    
 })();

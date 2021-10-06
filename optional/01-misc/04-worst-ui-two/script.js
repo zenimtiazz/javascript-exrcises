@@ -11,6 +11,44 @@
 
 (function() {
 
-    // your code here
+
+    function addLeadingZeros(num, size) {
+     
+        let s = num + "";
+        while (s.length < size) s = "0" + s;
+        return s;
+    }
+
+    const increaseNumber = (start, min, max) => {
+        if (start >= max || start < min) {
+            return start;
+        }
+        return ++start;
+    }
+
+    const hotButtonsIDS = [
+        "part-one",
+        "part-two",
+        "part-three",
+        "part-four"
+    ];
+
+    const updateText = () => {
+        const text = document.querySelector(".actions").innerText.replace(/(\r\n|\n|\r)/gm, "");
+        document.getElementById("target").innerHTML = "+" + text;
+    }
+
+
+
+    hotButtonsIDS.forEach((buttonID) => {
+        document.getElementById(buttonID).addEventListener("click", () => {
+            const button = document.getElementById(buttonID);
+            const min = button.getAttribute("data-min");
+            const max = button.getAttribute("data-max");
+            const curr = button.innerHTML;
+            button.innerHTML = addLeadingZeros(increaseNumber(curr, min, max), 2);
+            updateText();
+        });
+    })
 
 })();
