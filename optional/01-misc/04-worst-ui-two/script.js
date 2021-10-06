@@ -12,43 +12,30 @@
 (function() {
 
 
-    function addLeadingZeros(num, size) {
-     
-        let s = num + "";
-        while (s.length < size) s = "0" + s;
-        return s;
-    }
+    let target = document.getElementById("target");
+    let b1 = document.getElementById("part-one");
+    let b2 = document.getElementById("part-two");
+    let b3 = document.getElementById("part-three");
+    let b4 = document.getElementById("part-four");
+    let buttons = [b1, b2, b3, b4];
 
-    const increaseNumber = (start, min, max) => {
-        if (start >= max || start < min) {
-            return start;
-        }
-        return ++start;
-    }
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            let min = button.getAttribute("data-min")
+            let max = button.getAttribute("data-max")
+            let result = parseInt(button.innerHTML) + 1;
+            if (result > max) {
+                result = min
+            }
+            if (result < 10) {
+                button.innerHTML = "0" + result;
+            } else {
+                button.innerHTML = result.toString();
+            }
+            target.innerText = "+" + b1.innerText + b2.innerText + b3.innerText + b4.innerText;
 
-    const hotButtonsIDS = [
-        "part-one",
-        "part-two",
-        "part-three",
-        "part-four"
-    ];
-
-    const updateText = () => {
-        const text = document.querySelector(".actions").innerText.replace(/(\r\n|\n|\r)/gm, "");
-        document.getElementById("target").innerHTML = "+" + text;
-    }
-
-
-
-    hotButtonsIDS.forEach((buttonID) => {
-        document.getElementById(buttonID).addEventListener("click", () => {
-            const button = document.getElementById(buttonID);
-            const min = button.getAttribute("data-min");
-            const max = button.getAttribute("data-max");
-            const curr = button.innerHTML;
-            button.innerHTML = addLeadingZeros(increaseNumber(curr, min, max), 2);
-            updateText();
-        });
+        })
     })
+
 
 })();
